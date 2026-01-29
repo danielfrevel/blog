@@ -45,10 +45,12 @@ Plans:
   3. Animation respects prefers-reduced-motion (static fallback)
   4. Scrolling and interaction remain smooth (no jank) on desktop and mobile
   5. Animation pauses when tab is not visible
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] TBD
+- [ ] 02-01-PLAN.md — Core flow field animation with Simplex noise and mouse interaction
+- [ ] 02-02-PLAN.md — Browser optimizations and accessibility (visibility, reduced-motion, mobile)
+- [ ] 02-03-PLAN.md — Visual verification checkpoint
 
 ### Phase 3: Comments System
 **Goal**: Visitors can leave guest comments with effective spam prevention
@@ -85,6 +87,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Layout & Typography Foundation | 3/3 | ✓ Complete | 2026-01-29 |
-| 2. Interactive Background | 0/TBD | Not started | - |
+| 2. Interactive Background | 0/3 | Not started | - |
 | 3. Comments System | 0/TBD | Not started | - |
 | 4. View Transitions | 0/TBD | Not started | - |
