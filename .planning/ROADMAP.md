@@ -28,10 +28,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Footer stays at viewport bottom when content is short
   3. Typography scales smoothly across viewport sizes with variable font loading
   4. Light theme displays by default with functional dark mode toggle
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] TBD
+- [ ] 01-01-PLAN.md — Tailwind typography config (65ch) and sticky footer layout
+- [ ] 01-02-PLAN.md — Variable font loading and light-default theme
+- [ ] 01-03-PLAN.md — Visual verification checkpoint
 
 ### Phase 2: Interactive Background
 **Goal**: Subtle, performant background animation that reacts to mouse without impacting usability
@@ -82,7 +84,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Layout & Typography Foundation | 0/TBD | Not started | - |
+| 1. Layout & Typography Foundation | 0/3 | Planned | - |
 | 2. Interactive Background | 0/TBD | Not started | - |
 | 3. Comments System | 0/TBD | Not started | - |
 | 4. View Transitions | 0/TBD | Not started | - |
