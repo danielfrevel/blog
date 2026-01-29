@@ -47,16 +47,19 @@
 
 <!-- Dark mode: prevent flash of wrong theme -->
 <script>
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  // Theme: light by default, dark if user chose it or system prefers dark
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const storedTheme = localStorage.theme;
+
+  if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
     document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
   }
+  // No else needed - html starts without 'dark' class (light default)
 </script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500" rel="stylesheet">
+<link href="https://fonts.bunny.net/css?family=inter:100..900|jetbrains-mono:400,500" rel="stylesheet">
 
 <!-- Tailwind CSS via Hugo Pipes -->
 {{ $css := resources.Get "css/main.css" }}
