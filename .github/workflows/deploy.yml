@@ -59,10 +59,11 @@ jobs:
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SERVER_HOST }}
+          port: 2222
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            cd /opt/blog
+            cd /opt/docker/blog
             docker compose pull
             docker compose up -d --remove-orphans
             docker image prune -f

@@ -1,12 +1,12 @@
 services:
   blog:
-    image: ghcr.io/YOUR_USERNAME/blog:latest
+    image: ghcr.io/danielfrevel/dande:latest
     container_name: blog
     restart: unless-stopped
     labels:
       # Traefik configuration
       - "traefik.enable=true"
-      - "traefik.http.routers.blog.rule=Host(`blog.example.com`)"
+      - "traefik.http.routers.blog.rule=Host(`blog.danfrevel.de`)"
       - "traefik.http.routers.blog.entrypoints=websecure"
       - "traefik.http.routers.blog.tls.certresolver=letsencrypt"
       - "traefik.http.services.blog.loadbalancer.server.port=80"
