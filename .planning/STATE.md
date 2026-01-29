@@ -10,29 +10,29 @@ See: .planning/PROJECT.md (updated 2026-01-28)
 ## Current Position
 
 Phase: 2 of 4 (Interactive Background)
-Plan: 1 of TBD in current phase
+Plan: 2 of TBD in current phase
 Status: In progress
-Last activity: 2026-01-29 — Completed 02-01-PLAN.md (Core Flow Field Animation)
+Last activity: 2026-01-29 — Completed 02-02-PLAN.md (Browser Optimizations & Integration)
 
-Progress: [███░░░░░░░] 30%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 2.1 min
-- Total execution time: 0.13 hours
+- Total plans completed: 5
+- Average duration: 1.9 min
+- Total execution time: 0.16 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 3 | 6.3min | 2.1min |
-| 02 | 1 | 1.7min | 1.7min |
+| 02 | 2 | 3.2min | 1.6min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (1.3min), 01-02 (3min), 01-03 (2min), 02-01 (1.7min)
-- Trend: Efficient execution ~2min/plan
+- Last 5 plans: 01-02 (3min), 01-03 (2min), 02-01 (1.7min), 02-02 (1.5min)
+- Trend: Accelerating execution <2min/plan
 
 *Updated after each plan completion*
 
@@ -56,6 +56,11 @@ Recent decisions affecting current work:
 - Distance squared check before sqrt for mouse force calculation (performance) [02-01]
 - Edge wrapping not clamping for seamless particle flow [02-01]
 - Responsive particle count: 50% on mobile viewports [02-01]
+- Use pointer:coarse media query for mobile detection (not viewport width) [02-02]
+- 60 particles on mobile vs 150 desktop for performance [02-02]
+- Larger particles (3px) on mobile for visibility [02-02]
+- Static gradient (not blank background) for reduced-motion fallback [02-02]
+- 100ms debounce on resize handler to avoid excessive redraws [02-02]
 
 ### Pending Todos
 
@@ -63,10 +68,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- Scripts need to be loaded in Hugo templates (perlin.js before flow-field-background.js) [02-01]
+None - scripts now integrated in baseof.html.
 
 ## Session Continuity
 
-Last session: 2026-01-29T10:22:30Z
-Stopped at: Completed 02-01-PLAN.md (Core Flow Field Animation)
+Last session: 2026-01-29T10:26:13Z
+Stopped at: Completed 02-02-PLAN.md (Browser Optimizations & Integration)
 Resume file: None
