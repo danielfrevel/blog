@@ -7,12 +7,12 @@
 
 ### Layout & Typography (LAYOUT)
 
-- [ ] **LAYOUT-01**: Content uses optimal line length (50-75 chars on desktop)
-- [ ] **LAYOUT-02**: Footer stays at bottom when content is short (sticky footer)
-- [ ] **LAYOUT-03**: Content area has proper max-width and centering
-- [ ] **LAYOUT-04**: Typography uses variable font for performance
-- [ ] **LAYOUT-05**: Light theme is default, dark mode toggle available
-- [ ] **LAYOUT-06**: Fluid typography scales with viewport
+- [x] **LAYOUT-01**: Content uses optimal line length (50-75 chars on desktop)
+- [x] **LAYOUT-02**: Footer stays at bottom when content is short (sticky footer)
+- [x] **LAYOUT-03**: Content area has proper max-width and centering
+- [x] **LAYOUT-04**: Typography uses variable font for performance
+- [x] **LAYOUT-05**: Light theme is default, dark mode toggle available
+- [x] **LAYOUT-06**: Fluid typography scales with viewport
 
 ### Interactive Background (BG)
 
@@ -62,12 +62,12 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LAYOUT-01 | Phase 1 | Pending |
-| LAYOUT-02 | Phase 1 | Pending |
-| LAYOUT-03 | Phase 1 | Pending |
-| LAYOUT-04 | Phase 1 | Pending |
-| LAYOUT-05 | Phase 1 | Pending |
-| LAYOUT-06 | Phase 1 | Pending |
+| LAYOUT-01 | Phase 1 | Complete |
+| LAYOUT-02 | Phase 1 | Complete |
+| LAYOUT-03 | Phase 1 | Complete |
+| LAYOUT-04 | Phase 1 | Complete |
+| LAYOUT-05 | Phase 1 | Complete |
+| LAYOUT-06 | Phase 1 | Complete |
 | BG-01 | Phase 2 | Pending |
 | BG-02 | Phase 2 | Pending |
 | BG-03 | Phase 2 | Pending |
