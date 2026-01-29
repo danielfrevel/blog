@@ -5,13 +5,16 @@ const CONFIG = {
   mobileParticleSize: 3,
   particleColor: '#6366f1',
   particleAlpha: 0.6,
-  noiseScale: 0.003,
-  noiseStrength: 0.5,
-  timeIncrement: 0.0003,
+  noiseScale: 0.005,
+  noiseStrength: 0.3,
+  timeIncrement: 0.001,
   mouseRadius: 120,
   mouseStrength: 3,
-  maxSpeed: 1.5,
-  trailFade: 0.08
+  maxSpeed: 2,
+  trailFade: 0.08,
+  particleMaxAge: 500,
+  bgLight: 'rgba(255, 255, 255, 0.08)',
+  bgDark: 'rgba(15, 23, 42, 0.08)'
 };
 
 let canvas, ctx, particles, noise;
@@ -49,17 +52,22 @@ function resizeCanvas() {
   createParticles();
 }
 
+function createParticle() {
+  return {
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    vx: (Math.random() - 0.5) * 0.5,
+    vy: (Math.random() - 0.5) * 0.5,
+    age: Math.random() * CONFIG.particleMaxAge
+  };
+}
+
 function createParticles() {
   particles = [];
   const count = isMobile ? CONFIG.mobileParticleCount : CONFIG.particleCount;
 
   for (let i = 0; i < count; i++) {
-    particles.push({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      vx: 0,
-      vy: 0
-    });
+    particles.push(createParticle());
   }
 }
 
@@ -73,6 +81,18 @@ function getFlowAngle(x, y, t) {
 }
 
 function updateParticle(particle, deltaTime) {
+  particle.age += deltaTime;
+
+  if (particle.age > CONFIG.particleMaxAge) {
+    const newP = createParticle();
+    particle.x = newP.x;
+    particle.y = newP.y;
+    particle.vx = newP.vx;
+    particle.vy = newP.vy;
+    particle.age = 0;
+    return;
+  }
+
   const angle = getFlowAngle(particle.x, particle.y, time);
   const fx = Math.cos(angle) * CONFIG.noiseStrength;
   const fy = Math.sin(angle) * CONFIG.noiseStrength;
@@ -106,8 +126,8 @@ function updateParticle(particle, deltaTime) {
   if (particle.y < 0) particle.y = window.innerHeight;
   if (particle.y > window.innerHeight) particle.y = 0;
 
-  particle.vx *= 0.99;
-  particle.vy *= 0.99;
+  particle.vx *= 0.98;
+  particle.vy *= 0.98;
 }
 
 function drawParticle(particle) {
@@ -117,6 +137,11 @@ function drawParticle(particle) {
   const size = isMobile ? CONFIG.mobileParticleSize : CONFIG.particleSize;
   ctx.arc(particle.x, particle.y, size, 0, Math.PI * 2);
   ctx.fill();
+}
+
+function isDarkMode() {
+  return document.documentElement.classList.contains('dark') ||
+         document.body.classList.contains('dark');
 }
 
 function animate() {
@@ -130,11 +155,9 @@ function animate() {
 
   time += CONFIG.timeIncrement * deltaTime;
 
-  ctx.globalAlpha = CONFIG.trailFade;
-  ctx.fillStyle = 'rgb(255, 255, 255)';
-  ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
-
   ctx.globalAlpha = 1;
+  ctx.fillStyle = isDarkMode() ? CONFIG.bgDark : CONFIG.bgLight;
+  ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
   for (let i = 0; i < particles.length; i++) {
     updateParticle(particles[i], deltaTime);
