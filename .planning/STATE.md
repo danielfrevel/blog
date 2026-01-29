@@ -10,28 +10,29 @@ See: .planning/PROJECT.md (updated 2026-01-28)
 ## Current Position
 
 Phase: 2 of 4 (Interactive Background)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-01-29 — Phase 1 complete, all 6 LAYOUT requirements verified
+Plan: 1 of TBD in current phase
+Status: In progress
+Last activity: 2026-01-29 — Completed 02-01-PLAN.md (Core Flow Field Animation)
 
-Progress: [██░░░░░░░░] 25%
+Progress: [███░░░░░░░] 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 2.2 min
-- Total execution time: 0.11 hours
+- Total plans completed: 4
+- Average duration: 2.1 min
+- Total execution time: 0.13 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 3 | 6.3min | 2.1min |
+| 02 | 1 | 1.7min | 1.7min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (1.3min), 01-02 (3min), 01-03 (2min)
-- Trend: Consistent ~2min/plan
+- Last 5 plans: 01-01 (1.3min), 01-02 (3min), 01-03 (2min), 02-01 (1.7min)
+- Trend: Efficient execution ~2min/plan
 
 *Updated after each plan completion*
 
@@ -51,6 +52,10 @@ Recent decisions affecting current work:
 - System dark mode preference honored for new visitors [01-02]
 - Manual visual verification necessary for layout and typography quality [01-03]
 - All Phase 1 success criteria confirmed through user testing [01-03]
+- Use simplex3 (not simplex2) for time-evolving flow field patterns [02-01]
+- Distance squared check before sqrt for mouse force calculation (performance) [02-01]
+- Edge wrapping not clamping for seamless particle flow [02-01]
+- Responsive particle count: 50% on mobile viewports [02-01]
 
 ### Pending Todos
 
@@ -58,10 +63,10 @@ None yet.
 
 ### Blockers/Concerns
 
-None yet.
+- Scripts need to be loaded in Hugo templates (perlin.js before flow-field-background.js) [02-01]
 
 ## Session Continuity
 
-Last session: 2026-01-29T00:26:59Z
-Stopped at: Completed 01-03-PLAN.md (Visual Verification) — Phase 1 complete
+Last session: 2026-01-29T10:22:30Z
+Stopped at: Completed 02-01-PLAN.md (Core Flow Field Animation)
 Resume file: None
